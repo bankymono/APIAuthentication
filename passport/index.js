@@ -2,6 +2,7 @@ const passport = require('passport')
 const JWT = require('jsonwebtoken');
 const config = require('../config');
 const jwtStrategy = require('./JwtStrategy');
+const LocalStrategy = require('./localStrategy');
 
 exports.getToken = (user_id) =>{
     return JWT.sign({
@@ -13,5 +14,7 @@ exports.getToken = (user_id) =>{
 }
 
 passport.use(jwtStrategy)
+
+passport.use(LocalStrategy)
 
 exports.passport = passport

@@ -26,5 +26,6 @@ module.exports = {
     },
     secret: async (req, res, next) =>{
         console.log('I managed to get here!')
+        res.json({secret:'resource'})
     }
 }

@@ -6,7 +6,7 @@ const User = require('../models/users.model')
 
 const opts = {}
 
-opts.jwtFromRequest = ExtractJwt.fromHeader("Authorization-Header")
+opts.jwtFromRequest = ExtractJwt.fromHeader("authorization")
 opts.secretOrKey = config.JWT_SECRET
 
 const jwtStrategy = new JwtStrategy(opts, async (payload, done)=>{
