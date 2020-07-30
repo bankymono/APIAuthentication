@@ -22,7 +22,9 @@ module.exports = {
         res.status(200).json({token})
     },
     signIn: async (req, res, next) =>{
-        console.log('UsersController.signIn() called!')
+        const token = getToken(req.user._id)
+        res.status(200).json({token})
+        console.log('token', token)
     },
     secret: async (req, res, next) =>{
         console.log('I managed to get here!')

@@ -11,6 +11,13 @@ const LocalStrategy = new localStrategy({
         if(!user){
             return done(null,false)
         }
+
+        const isMatch = await user.isValidPassword(password)
+
+        if(!isMatch){
+            return done(null,false)
+        }
+        done(null, user)
         
     } catch (error) {
         done(error, false)
