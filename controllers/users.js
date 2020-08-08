@@ -31,10 +31,15 @@ module.exports = {
     },
     
     googleOAuth: async (req,res,next) =>{   
-        console.log('req.user', req.user)
         const token = getToken(req.user._id)
         res.status(200).json({token})
     },
+
+    facebookOAuth: async (req,res,next)=>{
+        const token = getToken(req.user._id)
+        res.status(200).json({token})
+    },
+
     secret: async (req, res, next) =>{
         console.log('I managed to get here!')
         res.json({secret:'resource'})

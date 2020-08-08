@@ -4,8 +4,8 @@ const User = require('../models/users.model')
 
 
 const GPlusStrategy = new GooglePlusTokenStrategy({
-    clientID:config.clientID,
-    clientSecret:config.clientSecret
+    clientID:config.google.clientID,
+    clientSecret:config.google.clientSecret
 }, async (accessToken, refreshToken, profile,done)=>{
     try {
         console.log('accessToken', accessToken)
