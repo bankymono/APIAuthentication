@@ -17,7 +17,7 @@ export const oauthGoogle = data =>{
     return async dispatch =>{
         try {
             console.log('We received ', data) 
-            const response = await axios.post('https://localhost:5443/users/oauth/google',{
+            const response = await axios.post('https://mystifying-colden-37c638.netlify.app/users/oauth/google',{
                 access_token:data
             })           
             console.log('thaaa res',response)
