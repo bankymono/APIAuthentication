@@ -1,12 +1,13 @@
 const express = require('express');
 const router = require('express-promise-router')()
+const cors = require('../routes/cors')
 
 const {validateBody, schemas} = require('../helpers/routeHelpers')
 const UsersController = require('../controllers/users')
 const { passport } = require('../passport')
 
 router.route('/signup')
-    .post(validateBody(schemas.authSchema),UsersController.signUp)
+    .post(cors.corsWithOptions,validateBody(schemas.authSchema),UsersController.signUp)
 
 router.route('/signin')
     .post(validateBody(schemas.authSchema),

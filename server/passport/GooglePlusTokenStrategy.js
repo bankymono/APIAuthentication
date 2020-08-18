@@ -1,4 +1,4 @@
-const GooglePlusTokenStrategy = require('passport-google-plus-token')
+const GooglePlusTokenStrategy = require('passport-google-oauth20')
 const config = require('../config')
 const User = require('../models/users.model')
 

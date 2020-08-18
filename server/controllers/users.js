@@ -3,6 +3,8 @@ const getToken = require('../passport').getToken
 
 module.exports = {
     signUp: async (req, res, next) =>{
+        console.log(req.headers)
+        
         const {email,password} = req.value.body
 
         // check if user already exist
@@ -30,7 +32,10 @@ module.exports = {
         console.log('token', token)
     },
     
-    googleOAuth: async (req,res,next) =>{   
+    googleOAuth: async (req,res,next) =>{  
+//        res.setHeader("Set-Cookie", "Secure;SameSite=None"); 
+        console.log('req-->',req)
+        console.log('res-->',res)
         const token = getToken(req.user._id)
         res.status(200).json({token})
     },
