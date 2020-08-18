@@ -7,6 +7,7 @@ const UsersController = require('../controllers/users')
 const { passport } = require('../passport')
 
 router.route('/signup')
+    .options(cors.corsWithOptions, (req,res) => res.sendStatus(200))
     .post(cors.corsWithOptions,validateBody(schemas.authSchema),UsersController.signUp)
 
 router.route('/signin')
