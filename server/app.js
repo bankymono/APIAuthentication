@@ -6,7 +6,9 @@ const cors = require('./routes/cors')
 const http = require('http')
 const https = require('https')
 const fs = require('fs')
+var cookieParser = require('cookie-parser')
 
+app.use(cookieParser())
 const usersRouter = require('./routes/usersRoutes')
 const { normalize } = require('path')
 
