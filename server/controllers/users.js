@@ -33,7 +33,7 @@ module.exports = {
     },
     
     googleOAuth: async (req,res,next) =>{  
-//        res.setHeader("Set-Cookie", "Secure;SameSite=None"); 
+        res.setHeader("Set-Cookie", "Secure;SameSite=None"); 
         console.log('req-->',req)
         console.log('res-->',res)
         const token = getToken(req.user._id)

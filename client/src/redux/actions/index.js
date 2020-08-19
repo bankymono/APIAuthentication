@@ -18,7 +18,7 @@ export const oauthGoogle = data =>{
         try {
             console.log('We received ', data) 
 
-            const response = await axios.post('https://localhost:5443/users/oauth/google',{
+            const response = await axios.post('https://bankymono-auth-server.netlify.app/users/oauth/google',{
                 access_token:data
             })           
             console.log('thaaa res',response)
