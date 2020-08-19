@@ -17,6 +17,9 @@ export const oauthGoogle = data =>{
     return async dispatch =>{
         try {
             console.log('We received ', data) 
+            axios.defaults.headers.get['Accepts'] = 'application/json';
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:3000';
+            axios.defaults.headers.common['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept';
             const response = await axios.post('https://mystifying-colden-37c638.netlify.app/users/oauth/google',{
                 access_token:data
             })           
