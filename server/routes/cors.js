@@ -3,7 +3,7 @@ const cors = require('cors')
 
 const app = express()
 
-const whitelist = ['http://localhost:3000', 'https://mystifying-colden-37c638.netlify.app','https://heuristic-meitner-ef155a.netlify.app', 'https://localhost:3443','https://localhost:5443']
+const whitelist = ['http://localhost:3000',  'https://localhost:3443','https://localhost:5443']
 
 const corsOptionsDelegate = (req,callback) =>{
     var corsOptions;
