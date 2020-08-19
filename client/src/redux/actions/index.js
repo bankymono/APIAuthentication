@@ -17,10 +17,8 @@ export const oauthGoogle = data =>{
     return async dispatch =>{
         try {
             console.log('We received ', data) 
-            axios.defaults.headers.get['Accepts'] = 'application/json';
-            axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:3000';
-            axios.defaults.headers.common['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept';
-            const response = await axios.post('https://mystifying-colden-37c638.netlify.app/users/oauth/google',{
+
+            const response = await axios.post('https://localhost:5443/users/oauth/google',{
                 access_token:data
             })           
             console.log('thaaa res',response)
@@ -33,7 +31,7 @@ export const oauthGoogle = data =>{
 export const signUp = data =>{
     return async (dispatch) =>{
         try {
-            const res = await axios.post('http://localhost:5000/users/signup', data)
+            const res = await axios.post('https://bankymono-auth-server.netlify.app/users/signup', data)
             console.log('res', res)
 
             dispatch(authSignUp(res.data.token))
